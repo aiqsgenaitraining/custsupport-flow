@@ -94,18 +94,11 @@ class CustomerSupportFlow(Flow[SupportTicketState]):
         self.state.priority = "medium"
         # More access-specific processing using ITCrew
 
-       # Use a direct LLM call for categorization
-        llm = LLM(model="gemini/gemini-1.5-flash")
+       # Use a direct LLM call for finding resolution
 
-        prompt = f"""
-        Here is a Technical issue customer is facing
 
-        Issue: {self.state.issue_description}
+       # set the resolution_details based on the LLM call
 
-        Return only the issue resolution in a single line.
-        """
-
-        self.state.resolution_details = llm.call(prompt).strip()
     
         return "Technical Issue handled"
 
