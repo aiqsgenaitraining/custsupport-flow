@@ -48,6 +48,7 @@ class CustomerSupportFlow(Flow[SupportTicketState]):
     @listen(receive_ticket)
     def categorize_ticket(self, _):
         # Use a direct LLM call for categorization
+        # Exercise1: Use L1AgentCrew to perform categorization task
         llm = LLM(model="gemini/gemini-1.5-flash")
 
         prompt = f"""
@@ -94,10 +95,11 @@ class CustomerSupportFlow(Flow[SupportTicketState]):
         self.state.priority = "medium"
         # More access-specific processing using ITCrew
 
-       # Use a direct LLM call for finding resolution
+        # Exercise2: Use a direct LLM call for finding resolution
 
+        # set the resolution_details based on the LLM call
 
-       # set the resolution_details based on the LLM call
+        # Exercise3: Use L2TechAgentCrew to perform Tech resolution task
 
     
         return "Technical Issue handled"

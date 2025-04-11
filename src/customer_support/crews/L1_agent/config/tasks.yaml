@@ -1,0 +1,14 @@
+categorize_issue_task:
+  description: >
+    Categorize the following customer support issue into one of these categories:
+        - Billing
+        - Account Access
+        - Technical Issue
+        - Feature Request
+        - Other
+
+        Issue: {issue_description}
+
+  expected_output: >
+    Return only the category name
+  agent: L1_agent

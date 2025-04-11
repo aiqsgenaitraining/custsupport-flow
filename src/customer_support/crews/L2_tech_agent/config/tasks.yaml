@@ -1,0 +1,9 @@
+issue_resolution_task:
+  description: >
+    Here is a Technical issue customer is facing
+
+    Issue: {issue_description}
+
+  expected_output: >
+    Return only the issue resolution in a single line
+  agent: L2_tech_agent
